@@ -12,5 +12,12 @@ py = timeit.timeit(
     setup='import example_py',
     number=10000
 )
-print(cy,py)
+
+py_typed = timeit.timeit(
+    'example_py.test1(5000)',
+    setup='import example_py',
+    number=10000
+)
+
+print(cy,py, py_typed)
 print(f'cython is {py/cy} times faster')
